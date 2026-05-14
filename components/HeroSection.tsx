@@ -6,9 +6,6 @@ import { HiArrowDown } from "react-icons/hi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 
-
-
-
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 
@@ -88,16 +85,31 @@ function ParticleCanvas({ isDark }: { isDark: boolean }) {
 
         // clamp speed
         const spd = Math.sqrt(d.vx * d.vx + d.vy * d.vy);
-        if (spd > 1.8) { d.vx = (d.vx / spd) * 1.8; d.vy = (d.vy / spd) * 1.8; }
+        if (spd > 1.8) {
+          d.vx = (d.vx / spd) * 1.8;
+          d.vy = (d.vy / spd) * 1.8;
+        }
 
         d.x += d.vx;
         d.y += d.vy;
 
         // bounce
-        if (d.x < 0) { d.x = 0; d.vx *= -1; }
-        if (d.x > W) { d.x = W; d.vx *= -1; }
-        if (d.y < 0) { d.y = 0; d.vy *= -1; }
-        if (d.y > H) { d.y = H; d.vy *= -1; }
+        if (d.x < 0) {
+          d.x = 0;
+          d.vx *= -1;
+        }
+        if (d.x > W) {
+          d.x = W;
+          d.vx *= -1;
+        }
+        if (d.y < 0) {
+          d.y = 0;
+          d.vy *= -1;
+        }
+        if (d.y > H) {
+          d.y = H;
+          d.vy *= -1;
+        }
 
         // draw dot
         ctx!.beginPath();
@@ -180,14 +192,12 @@ export default function HeroSection() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-
       {/* Particle background */}
       <ParticleCanvas isDark={isDark} />
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-32 w-full">
         <div className="max-w-3xl">
-
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -231,7 +241,7 @@ export default function HeroSection() {
             />
           </motion.div>
 
-            <motion.p
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
@@ -248,7 +258,6 @@ export default function HeroSection() {
             </span>
             , aiming to integrate ML into robust data-driven solution.
           </motion.p>
-
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -277,7 +286,7 @@ export default function HeroSection() {
             className="flex items-center gap-5"
           >
             <a
-              href="https://github.com"
+              href="https://github.com/leon-dream1/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -286,7 +295,7 @@ export default function HeroSection() {
               <FaGithub className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/nahidulislam-cs/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -306,7 +315,6 @@ export default function HeroSection() {
               Narayanganj, Bangladesh
             </span>
           </motion.div>
-
         </div>
       </div>
 
@@ -326,21 +334,9 @@ export default function HeroSection() {
           <HiArrowDown className="w-5 h-5" />
         </motion.div>
       </motion.button>
-
     </section>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
 
 // export default function HeroSection() {
 
@@ -362,7 +358,7 @@ export default function HeroSection() {
 //   return (
 //     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
 //       {/* <ParticleCanvas isDark={isDark} /> */}
-      
+
 //       {/* Subtle background grid */}
 //       <div
 //         className="absolute inset-0 opacity-[0.025] dark:opacity-[0.04] pointer-events-none"
