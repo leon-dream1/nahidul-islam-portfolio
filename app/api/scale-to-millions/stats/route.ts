@@ -7,11 +7,9 @@ type Stats = {
   likes: number;
 };
 
-const statsFile = path.join(
-  process.cwd(),
-  "data",
-  "scale-to-millions-stats.json",
-);
+const statsFile = process.env.VERCEL
+  ? path.join("/tmp", "scale-to-millions-stats.json")
+  : path.join(process.cwd(), "data", "scale-to-millions-stats.json");
 
 async function readStats(): Promise<Stats> {
   try {
