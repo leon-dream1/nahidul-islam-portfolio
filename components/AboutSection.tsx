@@ -6,7 +6,7 @@ import { FiDownload } from "react-icons/fi";
 
 const stats = [
   { value: "3.74", label: "CGPA" },
-  { value: "4+", label: "Projects" },
+  { value: "10+", label: "Projects" },
   { value: "627+", label: "GitHub Contributions" },
   { value: "Feb 2026", label: "Graduated" },
 ];
