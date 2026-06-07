@@ -35,7 +35,6 @@ import {
   SiCloudinary,
   SiVercel,
   SiPostman,
-  SiFigma,
   SiVite,
   SiDocker,
 } from "react-icons/si";

@@ -8,6 +8,7 @@ import { HiSun, HiMoon, HiMenuAlt3, HiX } from "react-icons/hi";
 
 const navLinks = [
   { label: "About", href: "#about", isAnchor: true },
+  { label: "Experience", href: "#experience", isAnchor: true },
   { label: "Skills", href: "#skills", isAnchor: true },
   { label: "Projects", href: "#projects", isAnchor: true },
   { label: "Research", href: "#research", isAnchor: true },

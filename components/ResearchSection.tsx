@@ -2,13 +2,18 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { FiExternalLink } from "react-icons/fi";
 import { BsRobot } from "react-icons/bs";
 
 const techBadges = [
-  "Python", "PyTorch", "Swin Transformer",
-  "Cross-Validation", "Supervised Contrastive Loss",
-  "Cross-Entropy Loss", "XAI", "HAM10000",
+  "Python",
+  "PyTorch",
+  "Swin Transformer",
+  "Cross-Validation",
+  "Supervised Contrastive Loss",
+  "Cross-Entropy Loss",
+  "XAI",
+  "HAM10000",
 ];
 
 const bullets = [
@@ -23,7 +28,10 @@ export default function ResearchSection() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="research" className="py-24 px-6 border-t border-[var(--border)]">
+    <section
+      id="research"
+      className="py-24 px-6 border-t border-[var(--border)]"
+    >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -105,7 +113,9 @@ export default function ResearchSection() {
                     <p className="text-lg font-bold text-[var(--text-primary)]">
                       {m.value}
                     </p>
-                    <p className="text-[10px] text-[var(--text-muted)]">{m.label}</p>
+                    <p className="text-[10px] text-[var(--text-muted)]">
+                      {m.label}
+                    </p>
                   </div>
                 ))}
               </div>

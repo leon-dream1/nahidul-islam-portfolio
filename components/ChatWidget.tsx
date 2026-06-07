@@ -67,7 +67,7 @@ export default function ChatWidget() {
       } else {
         throw new Error(data.error || "No reply");
       }
-    } catch (err) {
+    } catch {
       setMessages((prev) => [
         ...prev,
         {
@@ -101,12 +101,26 @@ export default function ChatWidget() {
         }}
       >
         {isOpen ? (
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+          >
             <line x1="18" y1="6" x2="6" y2="18" />
             <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         ) : (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
           </svg>
         )}
@@ -136,8 +150,12 @@ export default function ChatWidget() {
               N
             </div>
             <div>
-              <p className="text-white font-medium text-sm leading-tight">Nahidul&apos;s Assistant</p>
-              <p className="text-indigo-200 text-xs">Ask me anything about Nahidul</p>
+              <p className="text-white font-medium text-sm leading-tight">
+                Nahidul&apos;s Assistant
+              </p>
+              <p className="text-indigo-200 text-xs">
+                Ask me anything about Nahidul
+              </p>
             </div>
             <div className="ml-auto flex items-center gap-1">
               <span className="w-2 h-2 rounded-full bg-green-400"></span>
@@ -160,12 +178,14 @@ export default function ChatWidget() {
                   style={
                     msg.role === "user"
                       ? {
-                          background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+                          background:
+                            "linear-gradient(135deg, #6366f1, #8b5cf6)",
                           color: "#fff",
                           borderBottomRightRadius: "4px",
                         }
                       : {
-                          background: "var(--color-background-secondary, #f3f4f6)",
+                          background:
+                            "var(--color-background-secondary, #f3f4f6)",
                           color: "var(--color-text-primary, #111)",
                           borderBottomLeftRadius: "4px",
                         }
@@ -186,9 +206,18 @@ export default function ChatWidget() {
                   }}
                 >
                   <span className="inline-flex gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce" style={{ animationDelay: "0ms" }}></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce" style={{ animationDelay: "150ms" }}></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce" style={{ animationDelay: "300ms" }}></span>
+                    <span
+                      className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce"
+                      style={{ animationDelay: "0ms" }}
+                    ></span>
+                    <span
+                      className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce"
+                      style={{ animationDelay: "150ms" }}
+                    ></span>
+                    <span
+                      className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce"
+                      style={{ animationDelay: "300ms" }}
+                    ></span>
                   </span>
                 </div>
               </div>
@@ -219,7 +248,9 @@ export default function ChatWidget() {
           {/* Input */}
           <div
             className="px-3 py-3 flex gap-2 items-end"
-            style={{ borderTop: "1px solid var(--color-border-tertiary, #e5e7eb)" }}
+            style={{
+              borderTop: "1px solid var(--color-border-tertiary, #e5e7eb)",
+            }}
           >
             <textarea
               value={input}
@@ -239,9 +270,18 @@ export default function ChatWidget() {
               onClick={() => sendMessage(input)}
               disabled={!input.trim() || isLoading}
               className="w-9 h-9 rounded-xl flex items-center justify-center transition-opacity disabled:opacity-40"
-              style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
+              style={{
+                background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+              }}
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                strokeWidth="2.5"
+              >
                 <line x1="22" y1="2" x2="11" y2="13" />
                 <polygon points="22 2 15 22 11 13 2 9 22 2" />
               </svg>
